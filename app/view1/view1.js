@@ -21,10 +21,14 @@ angular.module('myApp.view1', ['ngRoute'])
  headers: {
    'x-apikey': '5b47fcee4080a2143ad76d98'
  },
- data: { test: 'test' }
+
 }
 
-$http(req).then(function(){}, function(response){$scope.dogs = response.data;});
+$http(req).then(function(response){
+  
+  $scope.dogs = response.data;
+}, function(response){
   
 });
-
+  
+});

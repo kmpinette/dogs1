@@ -1,26 +1,43 @@
 <!doctype html>
 
     <head>
-        <script src="view1/view1.js"></script>
+        
         
     </head>
-    <div class="card text-center">
-        <div class="card-header">
-            <ul class="nav nav-tabs card-header-tabs">
+    <body>
+        <div class="card text-center">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#!/view1">Dogs List</a>
+                    </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#!/view1">Dogs List</a>
+                    <a class="nav-link" href="#!/view2">Add Dogs</a>
                 </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#!/view2">Add Dogs</a>
-            </li>
-            </ul>
+                </ul>
+            </div>
         </div>
-        <div ng-controller="Dogs">
-        <div class="card-body">
-        <h5 class="card-title">{{dogs}}</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-danger">DELETE THIS DOG</a>
-        </div>
-    </div>
-    </div>
 
+
+        
+        <div ng-controller="Dogs">
+            <div class="card" id="dog-data" style="width: 18rem;">
+                <div ng-repeat="dogsData in dogs">
+                    <div class="card-body">
+                        <h5 class="card-title">{{dogsData.breed}}</h5>
+                        <p class="card-text">{{dogsData.description}}</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Size {{dogsData.size}}</li>
+                        <li class="list-group-item">Lifespan {{dogsData.lifespan}}</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="btn btn-danger">DELETE THIS DOG</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <script src="view1/view1.js"></script>
+    </body>   
