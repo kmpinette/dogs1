@@ -1,38 +1,46 @@
+<!doctype html>
 
-<div class="card text-center">
-  <div class="card-header">
-    <ul class="nav nav-tabs card-header-tabs">
-      <li class="nav-item">
-        <a class="nav-link" href="#!/view1">Dogs List</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" href="#!/view2">Add Dogs</a>
-      </li>
-    </ul>
+<head>
+
+</head>
+
+<body>
+  <div class="card text-center">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs" id="nav1">
+        <li class="nav-item">
+          <a class="nav-link" href="#!/view1">Dogs List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#!/view2">Add Dogs</a>
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
-<div id="content">
-  <form>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Dog Breed</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1">
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlTextarea1">Dog Description</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlSelect1">Dog Size</label>
-      <select class="form-control" id="exampleFormControlSelect1">
-        <option>Small</option>
-        <option>Medium</option>
-        <option>Large</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Dog Size</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1">
-    </div>
-    <button type="submit" class="btn btn-success">Add Dog</button>
-  </form>
-</div>
+  <div id="content">
+    <form ng-app="myApp">
+      <div class="form-group" ng-controller="AddDog">
+        <label for="exampleFormControlInput1">Dog Breed</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" ng-model="AddDog.breed" ng-change="myChange(AddDog.breed)">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Dog Description</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Dog Size</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>Small</option>
+          <option>Medium</option>
+          <option>Large</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Dog Size</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1">
+      </div>
+      <button type="submit" class="btn btn-success">Add Dog</button>
+    </form>
+  </div>
+  <script src="view2/view2.js"></script>
+</body>

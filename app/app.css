@@ -1,27 +1,18 @@
 /* app css stylesheet */
-/* menu */
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+/* nav */
+
+#nav1 .nav-link {
+  color: black;
 }
 
-.menu:before {
-  content: "[";
+#nav1 a:hover{
+  color: white;
+  background-color: black; 
 }
 
-.menu:after {
-  content: "]";
-}
 
-.menu > li {
-  display: inline;
-}
-
-.menu > li + li:before {
-  content: "|";
-  padding-right: 0.3em;
+#exampleFormControlInput1{
+  width: 200px;
 }
 
 /*box styles */
@@ -40,8 +31,12 @@
   width: 400px;
 }
 /* Card Styles */
-#dog-data {
+#card1{
   margin: auto;
   margin-top: 25px;
-  border-style: solid;
+  margin-left: 0px;
+}
+.card-text {
+  height: 300px;
+  overflow: auto;
 }

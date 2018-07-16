@@ -7,37 +7,37 @@
     <body>
         <div class="card text-center">
             <div class="card-header">
-                <ul class="nav nav-tabs card-header-tabs">
+                <ul class="nav nav-tabs card-header-tabs" id="nav1">
                     <li class="nav-item">
                         <a class="nav-link active" href="#!/view1">Dogs List</a>
                     </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#!/view2">Add Dogs</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!/view2">Add Dogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Search" ng-model="$dogs.query">
+                    </li>
                 </ul>
             </div>
         </div>
-
-
-        
-        <div ng-controller="Dogs">
-            <div class="card" id="dog-data" style="width: 18rem;">
-                <div ng-repeat="dogsData in dogs">
-                    <div class="card-body">
-                        <h5 class="card-title">{{dogsData.breed}}</h5>
-                        <p class="card-text">{{dogsData.description}}</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Size {{dogsData.size}}</li>
-                        <li class="list-group-item">Lifespan {{dogsData.lifespan}}</li>
-                    </ul>
-                    <div class="card-body">
-                        <a href="#" class="btn btn-danger">DELETE THIS DOG</a>
+ 
+        <div ng-controller="Dogs" class="container">
+            <div class="row">
+                <div class="col-md-3" ng-repeat="dogsData in dogs | filter:$dogs.query">
+                    <div class="card" id="card1">
+                        <div class="card-body">
+                            <h5 class="card-title">{{dogsData.breed}}</h5>
+                            <p class="card-text">{{dogsData.description}}</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Size {{dogsData.size}}</li>
+                            <li class="list-group-item">Lifespan {{dogsData.lifespan}}</li>
+                        </ul>
+                       <button type="button" class="btn btn-danger">Delete this dog</button>
                     </div>
                 </div>
             </div>
         </div>
-        
         
         <script src="view1/view1.js"></script>
     </body>   
