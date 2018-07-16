@@ -15,10 +15,10 @@ angular.module('myApp.view2', ['ngRoute'])
 
 .controller('AddDog', function($scope, $http){
     
-  $scope.breed='',
-  $scope.description='',
-  $scope.size='',
-  $scope.lifespan='',
+  $scope.breed='';
+  $scope.description='';
+  $scope.size='';
+  $scope.lifespan='';
 
   $scope.myChange=function(val){
     console.log("changed",$scope.breed);
