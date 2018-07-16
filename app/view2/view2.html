@@ -21,7 +21,7 @@
     <form ng-app="myApp">
       <div class="form-group" ng-controller="AddDog">
         <label for="exampleFormControlInput1">Dog Breed</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" ng-model="AddDog.breed" ng-change="myChange(AddDog.breed)">
+        <input type="text" class="form-control" id="exampleFormControlInput1" ng-model="breed" ng-change="myChange(breed)">
       </div>
       <div class="form-group">
         <label for="exampleFormControlTextarea1">Dog Description</label>
@@ -39,7 +39,7 @@
         <label for="exampleFormControlInput1">Dog Size</label>
         <input type="text" class="form-control" id="exampleFormControlInput1">
       </div>
-      <button type="submit" class="btn btn-success">Add Dog</button>
+      <button type="submit" class="btn btn-success" ng-click="addClick()">Add Dog</button>
     </form>
   </div>
   <script src="view2/view2.js"></script>

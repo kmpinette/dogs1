@@ -14,23 +14,31 @@ angular.module('myApp.view2', ['ngRoute'])
 }])
 
 .controller('AddDog', function($scope, $http){
-  var req = {
-    method: 'POST',
-    url: 'https://dogsdb-c533.restdb.io/rest/dogs',
-    headers: {
-      'x-apikey': '5b47fcee4080a2143ad76d98'
-    },
-  }
-  $http(req).then(function(response){
-  
-    $scope.breed='',
-    $scope.description='',
-    $scope.size='',
-    $scope.lifespan='',
+    
+  $scope.breed='',
+  $scope.description='',
+  $scope.size='',
+  $scope.lifespan='',
 
   $scope.myChange=function(val){
     console.log("changed",$scope.breed);
     console.log("on-change",val);
-    };
-  })
+  };
+  $scope.addClick=function(){
+    console.log("click")
+    var req = {
+      method: 'POST',
+      url: 'https://dogsdb-c533.restdb.io/rest/dogs',
+      headers: {
+        'x-apikey': '5b47fcee4080a2143ad76d98'
+      },
+      data: {
+        breed: $scope.breed,
+        description: $scope.description,
+        size: $scope.size,
+        lifespan: $scope.lifespan
+      }
+    }; 
+    $http(req).then(function(response){});
+  }
 })
