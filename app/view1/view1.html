@@ -22,7 +22,7 @@
         </div>
  
         <div ng-controller="Dogs" class="container">
-            <div class="row" ng-controller="DeleteDog">
+            <div class="row">
                 <div class="col-md-3" ng-repeat="dogsData in dogs | filter:$dogs.query">
                     <div class="card" id="card1">
                         <div class="card-body">
@@ -33,7 +33,7 @@
                             <li class="list-group-item">Size {{dogsData.size}}</li>
                             <li class="list-group-item">Lifespan {{dogsData.lifespan}}</li>
                         </ul>
-                       <button type="button" class="btn btn-danger" ng-click="deleteClick(dogsData.id)">Delete this dog</button>
+                       <button type="button" class="btn btn-danger" ng-click="deleteClick(dogsData._id)">Delete this dog</button>
                     </div>
                 </div>
             </div>

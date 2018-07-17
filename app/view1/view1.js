@@ -14,41 +14,37 @@ angular.module('myApp.view1', ['ngRoute'])
 }])
 
 .controller('Dogs', function($scope, $http) {
-  var req = {
-    method: 'get',
-    url: 'https://dogsdb-c533.restdb.io/rest/dogs',
-    headers: {
-      'x-apikey': '5b47fcee4080a2143ad76d98'
+  $scope.loadData=function(){
+    var req = {
+      method: 'get',
+      url: 'https://dogsdb-c533.restdb.io/rest/dogs',
+      headers: {
+        'x-apikey': '5b47fcee4080a2143ad76d98'
+      }
     }
+    $http(req).then(function(response){
+      $scope.dogs = response.data;
+    })
   }
-
-  $http(req).then(function(response){
-    $scope.dogs = response.data;
-},  function(response){
-
-  })
-})
-
-
-
-.controller('DeleteDog', function($scope, $http){
-  
-  $scope.deleteClick=function(){
+    
+  $scope.deleteClick=function(id){
     console.log("click")
       var req = {
-        method: 'DELETE',
-        url: 'https://dogsdb-c533.restdb.io/rest/dogs',
+        method: 'delete',
+        url: 'https://dogsdb-c533.restdb.io/rest/dogs/'+ id,
         headers: {
           'x-apikey': '5b47fcee4080a2143ad76d98'
         }
-      }
-      data: {
-        id: $scope.id
-      }
-    
-    $http(req).then(function(response){});
+      };      
+      
+    console.log($scope._id);
+    $http(req).then(function(response){
+      $scope.loadData();
+    });
   }
+  $scope.loadData();
 })
+
 
 
 
