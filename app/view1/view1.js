@@ -19,18 +19,36 @@ angular.module('myApp.view1', ['ngRoute'])
     url: 'https://dogsdb-c533.restdb.io/rest/dogs',
     headers: {
       'x-apikey': '5b47fcee4080a2143ad76d98'
-    },
+    }
   }
 
-$http(req).then(function(response){
+  $http(req).then(function(response){
+    $scope.dogs = response.data;
+},  function(response){
+
+  })
+})
+
+
+
+.controller('DeleteDog', function($scope, $http){
   
-  $scope.dogs = response.data;
-}, function(response){
-});
-
-
-
-});
+  $scope.deleteClick=function(){
+    console.log("click")
+      var req = {
+        method: 'DELETE',
+        url: 'https://dogsdb-c533.restdb.io/rest/dogs',
+        headers: {
+          'x-apikey': '5b47fcee4080a2143ad76d98'
+        }
+      }
+      data: {
+        id: $scope.id
+      }
+    
+    $http(req).then(function(response){});
+  }
+})
 
 
 

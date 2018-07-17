@@ -21,25 +21,25 @@
     <form ng-controller="AddDog">
       <div class="form-group">
         <label for="exampleFormControlInput1">Dog Breed</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" ng-model="breed" ng-change="myChange(breed)">
+        <input type="text" class="form-control" id="exampleFormControlInput1" ng-model="breed">
       </div>
       <div class="form-group">
-        <label for="exampleFormControlTextarea1">Dog Description</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+        <label for="exampleFormControlTextarea1" ng-model="description">Dog Description</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" ng-model="description"></textarea>
       </div>
       <div class="form-group">
-        <label for="exampleFormControlSelect1">Dog Size</label>
-        <select class="form-control" id="exampleFormControlSelect1">
+        <label for="exampleFormControlSelect1" ng-model="size">Dog Size</label>
+        <select class="form-control" id="exampleFormControlSelect1" ng-model="size">
           <option>Small</option>
           <option>Medium</option>
           <option>Large</option>
         </select>
       </div>
       <div class="form-group">
-        <label for="exampleFormControlInput1">Dog Size</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1">
+        <label for="exampleFormControlInput1" ng-model="lifespan">Dog Lifespan</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" ng-model="lifespan">
       </div>
-      <button type="submit" class="btn btn-success" ng-click="addClick()">Add Dog</button>
+        <button type="submit" class="btn btn-success" ng-click="addClick()">Add Dog</button>
     </form>
   </div>
   <script src="view2/view2.js"></script>
