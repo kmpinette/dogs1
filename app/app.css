@@ -1,13 +1,20 @@
 /* app css stylesheet */
+body {
+  background-color: lightblue;
+}
 /* nav */
+#card-color {
+  background-color: white;
+}
 
 #nav1 .nav-link {
   color: black;
 }
 
 #nav1 a:hover{
-  color: white;
-  background-color: black; 
+  color: black;
+  background-color: lightblue; 
+  text-decoration: underline;
 }
 
 
@@ -24,6 +31,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 434px;
+  background-color: white;
 }
 
 /* form styles */
@@ -36,6 +44,7 @@
   margin-top: 25px;
   margin-left: 0px;
 }
+
 .card-text {
   height: 300px;
   overflow: auto;
