@@ -9,10 +9,10 @@
             <div class="card-header">
                 <ul class="nav nav-tabs card-header-tabs" id="nav1">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#!/view1">Dogs List</a>
+                        <a class="nav-link active" href="#!/dogList">Dogs List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#!/view2">Add Dogs</a>
+                        <a class="nav-link" href="#!/dogAdd">Add Dogs</a>
                     </li>
                     <li class="nav-item">
                         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Search" ng-model="$dogs.query">
@@ -33,11 +33,11 @@
                             <li class="list-group-item">Size {{dogsData.size}}</li>
                             <li class="list-group-item">Lifespan {{dogsData.lifespan}}</li>
                         </ul>
-                       <button type="button" class="btn btn-danger" ng-click="deleteClick(dogsData._id)">Delete this dog</button>
+                       <button type="button" class="btn btn-danger" id="button" ng-click="deleteClick(dogsData._id)">Delete this dog</button>
                     </div>
                 </div>
             </div>
         </div>
         
-        <script src="view1/view1.js"></script>
+        <script src="dogList/dogList.js"></script>
     </body>   

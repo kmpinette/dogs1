@@ -38,6 +38,9 @@ body {
 .form-control {
   width: 400px;
 }
+.btn:hover {
+  text-decoration: underline;
+}
 /* Card Styles */
 #card1{
   margin: auto;
@@ -48,4 +51,8 @@ body {
 .card-text {
   height: 300px;
   overflow: auto;
+  font-family: sans-serif;
+}
+#button {
+  border-radius: 0px;
 }

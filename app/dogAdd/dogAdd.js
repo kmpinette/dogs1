@@ -1,15 +1,15 @@
 'use strict';
 
-angular.module('myApp.view2', ['ngRoute'])
+angular.module('myApp.dogAdd', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view2', {
-    templateUrl: 'view2/view2.html',
-    controller: 'View2Ctrl'
+  $routeProvider.when('/dogAdd', {
+    templateUrl: 'dogAdd/dogAdd.html',
+    controller: 'DogAddCtrl'
   });
 }])
 
-.controller('View2Ctrl', [function() {
+.controller('DogAddCtrl', [function() {
 
 }])
 
@@ -19,13 +19,8 @@ angular.module('myApp.view2', ['ngRoute'])
   $scope.description='';
   $scope.size='';
   $scope.lifespan='';
-
-  $scope.myChange=function(val){
-    console.log("changed",$scope.breed);
-    console.log("on-change",val);
-  };
+  
   $scope.addClick=function(){
-    console.log("click")
     var req = {
       method: 'POST',
       url: 'https://dogsdb-c533.restdb.io/rest/dogs',

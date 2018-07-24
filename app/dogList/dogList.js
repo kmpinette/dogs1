@@ -1,15 +1,15 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute'])
+angular.module('myApp.dogList', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {
-    templateUrl: 'view1/view1.html',
-    controller: 'View1Ctrl'
+  $routeProvider.when('/dogList', {
+    templateUrl: 'dogList/dogList.html',
+    controller: 'DogListCtrl'
   });
 }])
 
-.controller('View1Ctrl', [function() {
+.controller('DogListCtrl', [function() {
  
 }])
 
@@ -28,7 +28,7 @@ angular.module('myApp.view1', ['ngRoute'])
   }
     
   $scope.deleteClick=function(id){
-    console.log("click")
+    if(window.confirm("Do you really want to delete this dog?")) {
       var req = {
         method: 'delete',
         url: 'https://dogsdb-c533.restdb.io/rest/dogs/'+ id,
@@ -36,8 +36,7 @@ angular.module('myApp.view1', ['ngRoute'])
           'x-apikey': '5b47fcee4080a2143ad76d98'
         }
       };      
-      
-    console.log($scope._id);
+    } 
     $http(req).then(function(response){
       $scope.loadData();
     });
